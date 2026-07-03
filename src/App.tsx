@@ -186,14 +186,6 @@ export default function App() {
             <div className="grid grid-cols-1 gap-2 text-xs text-zinc-400 font-sans font-medium">
               <button onClick={() => navigateTo("welcome")} className="text-left hover:text-white transition-colors py-1">Home</button>
               <button onClick={() => navigateTo("compare")} className="text-left hover:text-white transition-colors py-1">Compare Cards</button>
-              <a 
-                href="https://tenor.com/search/two-black-people-kissing-gifs" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hover:text-white transition-colors py-1 flex items-center gap-1"
-              >
-                For You Daniel
-              </a>
             </div>
           </div>
 
