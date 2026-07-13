@@ -18,9 +18,9 @@ export default function CompareView({ onBack }: Props) {
 
   // Customizable video urls for Daniel Sparks
   const [videoUrls, setVideoUrls] = useState<Record<string, string>>({
-    "bilt-blue": "blue video.webm",
-    "bilt-obsidian": "obisidan video.webm",
-    "bilt-palladium": "palladium video.webm",
+    "bilt-blue": "/blue_video.webm",
+    "bilt-obsidian": "/obsidian_video.webm",
+    "bilt-palladium": "/palladium_video.webm",
   });
 
   const [showSettings, setShowSettings] = useState(false);
@@ -65,14 +65,14 @@ export default function CompareView({ onBack }: Props) {
         const parsed = JSON.parse(savedVideos);
         // Automatically upgrade old local paths or broken defaults to working live CDNs
         const upgraded = { ...parsed };
-        if (!upgraded["bilt-blue"] || upgraded["bilt-blue"] === "/bilt-blue.mp4") {
-          upgraded["bilt-blue"] = "blue video.webm";
+        if (!upgraded["bilt-blue"] || upgraded["bilt-blue"] === "/bilt-blue.mp4" || upgraded["bilt-blue"] === "blue video.webm") {
+          upgraded["bilt-blue"] = "/blue_video.webm";
         }
-        if (!upgraded["bilt-obsidian"] || upgraded["bilt-obsidian"] === "/bilt-obsidian.mp4") {
-          upgraded["bilt-obsidian"] = "obisidan video.webm";
+        if (!upgraded["bilt-obsidian"] || upgraded["bilt-obsidian"] === "/bilt-obsidian.mp4" || upgraded["bilt-obsidian"] === "obisidan video.webm") {
+          upgraded["bilt-obsidian"] = "/obsidian_video.webm";
         }
-        if (!upgraded["bilt-palladium"] || upgraded["bilt-palladium"] === "/bilt-palladium.mp4") {
-          upgraded["bilt-palladium"] = "palladium video.webm";
+        if (!upgraded["bilt-palladium"] || upgraded["bilt-palladium"] === "/bilt-palladium.mp4" || upgraded["bilt-palladium"] === "palladium video.webm") {
+          upgraded["bilt-palladium"] = "/palladium_video.webm";
         }
         setVideoUrls(upgraded);
         setTempVideoUrls(upgraded);
@@ -82,9 +82,9 @@ export default function CompareView({ onBack }: Props) {
     } else {
       // If no videos are saved yet, sync the tempState with our live default CDN list
       setTempVideoUrls({
-        "bilt-blue": "blue video.webm",
-        "bilt-obsidian": "obisidan video.webm",
-        "bilt-palladium": "palladium video.webm",
+        "bilt-blue": "/blue_video.webm",
+        "bilt-obsidian": "/obsidian_video.webm",
+        "bilt-palladium": "/palladium_video.webm",
       });
     }
   }, []);
@@ -108,9 +108,9 @@ export default function CompareView({ onBack }: Props) {
       "bilt-palladium": "https://www.bilt.com/card/application?tier=palladium",
     };
     const defaultVideos = {
-      "bilt-blue": "blue video.webm",
-      "bilt-obsidian": "obisidan video.webm",
-      "bilt-palladium": "palladium video.webm",
+      "bilt-blue": "/blue_video.webm",
+      "bilt-obsidian": "/obsidian_video.webm",
+      "bilt-palladium": "/palladium_video.webm",
     };
     setTempLinks(defaultLinks);
     setLinks(defaultLinks);
@@ -187,14 +187,14 @@ export default function CompareView({ onBack }: Props) {
                         <>
                           <button
                             type="button"
-                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-blue": "blue video.webm" })}
+                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-blue": "/blue_video.webm" })}
                             className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 hover:border-blue-500/50 text-[9px] text-zinc-400 hover:text-white transition-all font-mono"
                           >
                             Laser Glow (Default)
                           </button>
                           <button
                             type="button"
-                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-blue": "blue video.webm" })}
+                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-blue": "/blue_video.webm" })}
                             className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 hover:border-blue-500/50 text-[9px] text-zinc-400 hover:text-white transition-all font-mono"
                           >
                             Starry Space
@@ -205,14 +205,14 @@ export default function CompareView({ onBack }: Props) {
                         <>
                           <button
                             type="button"
-                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-obsidian": "obisidan video.webm" })}
+                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-obsidian": "/obsidian_video.webm" })}
                             className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 hover:border-emerald-500/50 text-[9px] text-zinc-400 hover:text-white transition-all font-mono"
                           >
                             Cyber Circuit (Default)
                           </button>
                           <button
                             type="button"
-                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-obsidian": "obisidan video.webm" })}
+                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-obsidian": "/obsidian_video.webm" })}
                             className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 hover:border-emerald-500/50 text-[9px] text-zinc-400 hover:text-white transition-all font-mono"
                           >
                             Midnight Flow
@@ -223,14 +223,14 @@ export default function CompareView({ onBack }: Props) {
                         <>
                           <button
                             type="button"
-                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-palladium": "hpalladium video.webm" })}
+                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-palladium": "/palladium_video.webm" })}
                             className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 text-[9px] text-zinc-400 hover:text-white transition-all font-mono"
                           >
                             Elite Gold (Default)
                           </button>
                           <button
                             type="button"
-                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-palladium": "palladium video.webm" })}
+                            onClick={() => setTempVideoUrls({ ...tempVideoUrls, "bilt-palladium": "/palladium_video.webm" })}
                             className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 text-[9px] text-zinc-400 hover:text-white transition-all font-mono"
                           >
                             Silver Wave
